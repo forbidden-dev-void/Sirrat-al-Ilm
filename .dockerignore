@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Build context exclusions — keep the image small and secrets out of layers
+# ---------------------------------------------------------------------------
+
+# Secrets and local environment (compose passes these at runtime, never baked in)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# Build artefacts (the SPA is compiled inside the image)
+backend/app/static/*
+!backend/app/static/.gitkeep
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+
+# VCS / editor / OS
+.git/
+.gitignore
+.github/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

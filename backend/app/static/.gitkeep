@@ -1,0 +1,2 @@
+# The compiled SPA is copied here by scripts/build.sh (and by the Docker
+# image build). Its contents are build artefacts and are git-ignored.

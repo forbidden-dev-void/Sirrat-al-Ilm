@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Design tokens — Sirrat al-Ilm
+   ==========================================================================
+   Every colour, spacing step, radius and shadow used in the app is defined
+   here once. Components never hard-code hex values, which keeps the "clean,
+   premium, cozy" palette consistent and makes a re-theme a one-file change.
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* --- Palette (from the brief) ---------------------------------------- */
+  --color-bg: #f7f3ee;          /* base background: soft warm linen        */
+  --color-surface: #efeae2;     /* card / container fill                   */
+  --color-chocolate: #3e1e12;   /* headers, primary buttons, active tabs   */
+  --color-walnut: #5c463c;      /* body text, subheadings, icons           */
+  --color-latte: #a48675;       /* secondary details, highlights           */
+  --color-border: #e2dacf;      /* subtle borders, dividers, inactive arrows */
+  --color-paper: #fffdfb;       /* raised surfaces inside cards            */
+
+  /* --- Derived / semantic ---------------------------------------------- */
+  --color-text: var(--color-walnut);
+  --color-text-strong: var(--color-chocolate);
+  --color-text-muted: #8a766a;
+  --color-on-chocolate: #f7f3ee;
+  --color-on-latte: #fffdfb;
+
+  --color-success: #4f6b4a;
+  --color-success-soft: #e6ece1;
+  --color-warning: #9a6b2f;
+  --color-warning-soft: #f4e9d8;
+  --color-danger: #8c3a2b;
+  --color-danger-soft: #f3e2dd;
+  --color-info: #4a5f6b;
+  --color-info-soft: #e4eaee;
+
+  /* --- Typography ------------------------------------------------------ */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.8125rem;  /* 13px */
+  --text-base: 0.9375rem;/* 15px */
+  --text-md: 1.0625rem;  /* 17px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.625rem;   /* 26px */
+  --text-2xl: 2.125rem;  /* 34px */
+  --text-3xl: 3rem;      /* 48px */
+  --text-4xl: clamp(2.5rem, 6vw, 4.25rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-body: 1.65;
+
+  --tracking-tight: -0.015em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.16em;
+
+  /* --- Spacing scale --------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* --- Radii ----------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  /* --- Elevation (soft, warm shadows) ---------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(62, 30, 18, 0.06);
+  --shadow-md: 0 6px 18px rgba(62, 30, 18, 0.08);
+  --shadow-lg: 0 18px 44px rgba(62, 30, 18, 0.13);
+  --shadow-inset: inset 0 1px 0 rgba(255, 253, 251, 0.6);
+
+  /* --- Layout ---------------------------------------------------------- */
+  --container: 1240px;
+  --container-narrow: 860px;
+  --navbar-height: 74px;
+
+  /* --- Motion ---------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+
+  /* --- Focus ring ------------------------------------------------------ */
+  --focus-ring: 0 0 0 3px rgba(164, 134, 117, 0.45);
+}
+
+/* Reduced motion: honour the user's system preference everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

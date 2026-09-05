@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+# Node / frontend build artefacts (never commit these)
+# ---------------------------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/.vite/
+backend/app/static/*
+!backend/app/static/.gitkeep
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Secrets & local environment — .env.example IS committed, .env IS NOT
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Local database files (SQLite is the zero-config default for development)
+# ---------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+
+# ---------------------------------------------------------------------------
+# Editor / OS noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*
